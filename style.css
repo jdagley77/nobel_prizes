@@ -1,8 +1,7 @@
 body {
-	/*background-color: red;*/
 	background: url(http://res.cloudinary.com/dtk22y6kq/image/upload/v1501002621/Wood_floor_by_gnrbishop_nvm8j0.jpg);
-    /*background-size: 80px 60px;*/
     background-repeat: repeat;
+    font-size: 1.5em;
 }
 
 h1 {
@@ -22,8 +21,12 @@ h1 {
 	border: 1px solid black;
 	margin: 10px 10px;
 	border-radius: 10px;
+	overflow: auto;
 }
 
+.cat {
+	font-weight: bold;
+}
 
 p.motiv {
 	color: red;
