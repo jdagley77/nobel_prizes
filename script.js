@@ -12,7 +12,7 @@ $.getJSON("nobel.json", function(data) {
  		for (var j=0; j < prizes[i].laureates.length; j++) {
  			var firstName = prizes[i].laureates[j].firstname;
  			var lastName = prizes[i].laureates[j].surname;
- 			fullName.push(firstName + lastName);
+ 			fullName.push(firstName + ' ' + lastName);
  			var motivText = prizes[i].laureates[j].motivation;
  			motiv = motivText;
  		}
