@@ -5,11 +5,7 @@ $.getJSON("nobel.json", function(data) {
 
  	for (var i = 0; i < prizes.length; i++) {
  		var cat = prizes[i].category;
- 		if (cat === 'physics') {
- 			cat = '<p class="cat physics">' + cat + '</p>'
- 		} else {
- 			cat = '<p class="cat">' + cat + '</p>';
- 		}
+ 		cat = '<p class="cat">' + cat + '</p>';
  		var year = prizes[i].year;	
  		var motiv = '';
  		var fullName = [];
@@ -24,39 +20,53 @@ $.getJSON("nobel.json", function(data) {
  		fullName.forEach(function(name){
  			namePara += '<li>' + name + '</li>';
  		})
- 		$('body').append('<div class="item">' + cat + '<p class="year">' + year + '</p>' + '<ul class="names">' + namePara + '</ul>' + '<p class="motiv">' + motiv + '</p>' + '</div>');
+ 		$('#content').append('<div class="item">' + cat + '<p class="year">' + year + '</p>' + '<ul class="names">' + namePara + '</ul>' + '<p class="motiv">' + motiv + '</p>' + '</div>');
  	}	
+
+ 	var allItems = $('.item')
+ 	assignColors(allItems)
 
 })
 
-// var categ = $('p .cat');
-// console.log(categ.html())
-// if ($('.cat').text('physics')) {
-// 	var closeItem = this.find('.item');
-// 	$(closeItem).css('background-color', 'green')
-// }
 
-var categ = $('.item').find('.cat')
-console.log(categ.html())
-// if($('.item').hasClass('cat').text() === 'physics') {
-// 	console.log('hi')
-// }
-	// var cat = $('body').find('.cat')
-	// console.log(cat.text())
-	// if (cat.text()==='physics') {
-	// 	$(this).css('background-color', 'green')
-	// }
+function assignColors(items) {
+	$( items ).each(function( index ) {
+	  	if ($(this).find('p').first().text() === 'physics') {
+	  		$(this).addClass('physics')
+	  	}
 
-	if ($('.cat').hasClass('physics')) {
-		$(this).parent('.item').addClass('physics');
-	}
+	  	else if ($(this).find('p').first().text() === 'chemistry') {
+	  		$(this).addClass('chem')
+	  	}
+
+	  	else if ($(this).find('p').first().text() === 'medicine') {
+	  		$(this).addClass('med')
+	  	}
+
+	  	else if ($(this).find('p').first().text() === 'peace') {
+	  		$(this).addClass('peace')
+	  	}
+
+	  	else if ($(this).find('p').first().text() === 'economics') {
+	  		$(this).addClass('econ')
+	  	}
+
+	  	else if ($(this).find('p').first().text() === 'literature') {
+	  		$(this).addClass('lit')
+	  	}
+
+	});
+}
+
 
 
 $('body').on("mouseover", ".item", function(e) {
-
-	var mot = $(this).find('.motiv')
-	mot.css('visibility', 'visible')
-	mot.hide().fadeIn(1000)
+	var thisItem = $(this);
+	var mot = $(this).find('.motiv');
+	mot.css('visibility', 'visible');
+	mot.hide().fadeIn(1000);
+	var currentCatClass = thisItem.find('p').first().attr('class')
+	
 })
 
 $('body').on("mouseleave", ".item", function(e) {
