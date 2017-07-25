@@ -24,10 +24,39 @@ $.getJSON("nobel.json", function(data) {
  	}	
 
  	var allItems = $('.item')
+ 	selectFilter(allItems)
  	assignColors(allItems)
 
 })
 
+
+function selectFilter(allItems) {
+	$( "select" ).change(function() {
+		var selected = $("select#cat-select option").filter(":selected").val();
+		hideEverything(allItems)
+		if (selected === 'all') {
+			$('.item').show()
+		} else if (selected === 'physics') {
+			$('.physics').show()
+		} else if (selected === 'chemistry') {
+			$('.chem').show()
+		} else if (selected === 'medicine') {
+			$('.med').show()
+		} else if (selected === 'literature') {
+			$('.lit').show()
+		} else if (selected === 'peace') {
+			$('.peace').show()
+		} else if (selected === 'economics') {
+			$('.econ').show()
+		}
+	});
+}
+
+function hideEverything(items) {
+	$( items ).each(function( index ) {
+		items.css('display', 'none')
+	})	
+}
 
 function assignColors(items) {
 	$( items ).each(function( index ) {
@@ -57,8 +86,6 @@ function assignColors(items) {
 
 	});
 }
-
-
 
 $('body').on("mouseover", ".item", function(e) {
 	var thisItem = $(this);

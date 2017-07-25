@@ -5,8 +5,28 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<h1>Nobel Prizes</h1> 
-	<div id="content"></div>
+	<h1>Nobel Prizes</h1>
+
+	<div id="category-select">
+
+		<form>
+		  <input id="search" type="text" name="search" placeholder="search"><br>
+		  <input type="submit" value="Submit">
+		</form>
+
+		<select id="cat-select">
+			<option value="all">All</option>
+		  <option value="physics">Physics</option>
+		  <option value="chemistry">Chemistry</option>
+		  <option value="medicine">Medicine</option>
+		  <option value="literature">Literature</option>
+		  <option value="peace">Peace</option>
+		  <option value="economics">Economics</option>
+		</select> 
+		<noscript><input type="submit" value="Submit"></noscript>
+	</div>
+	<div id="content">
+	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script src="script.js"></script>
 </body>

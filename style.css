@@ -8,6 +8,10 @@ h1 {
 	text-align: center;
 }
 
+#category-select {
+	text-align: center;
+}
+
 #content {
 	display: flex;
 	flex-direction: row;
