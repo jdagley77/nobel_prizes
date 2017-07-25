@@ -1,16 +1,27 @@
 body {
+	/*background-color: red;*/
+	background: url(http://res.cloudinary.com/dtk22y6kq/image/upload/v1501002621/Wood_floor_by_gnrbishop_nvm8j0.jpg);
+    /*background-size: 80px 60px;*/
+    background-repeat: repeat;
+}
+
+h1 {
+	text-align: center;
+}
+
+#content {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	background-color: red;
+	justify-content: center;
 }
 
 .item {
 	height: 300px;
 	width: 300px;
-	background-color: lightblue;
 	border: 1px solid black;
 	margin: 10px 10px;
+	border-radius: 10px;
 }
 
 
@@ -30,5 +41,25 @@ p.motiv {
 }
 
 .physics {
-	background-color: green;
+	background-color: #e1f7d5;
+}
+
+.chem {
+	background-color: #ffbdbd;
+}
+
+.med {
+	background-color: #c9c9ff;
+}
+
+.lit {
+	background-color: #FFC65B;
+}
+
+.peace {
+	background-color: white;
+}
+
+.econ {
+	background-color: #FFF06A;
 }
